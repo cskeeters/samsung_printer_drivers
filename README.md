@@ -1,6 +1,6 @@
 The purpose of this repository is to enable the installation of drivers for Samsung printer on macOS.
 
-The contents of `SamsungPrinterDrivers.pkg` have been added to this repository along with an `install` and `uninstall` script.  `install` will install the requisite files for your model, once you select the appropriate model using [fzf](https://github.com/junegunn/fzf).
+The contents of `SamsungPrinterDrivers.pkg` (v2.6) have been added to this repository along with an `install` and `uninstall` script.  `install` will install the requisite files for your model, once you select the appropriate model using [fzf](https://github.com/junegunn/fzf).
 
 If you are new to FZF, it's not hard.  Keep typing the name of your printer model until there is just one option and then press enter.
 
