@@ -32,6 +32,8 @@ Install FZF, the tool that you will select your Samsung printer model.
 brew install fzf
 ```
 
+If you don't want to install FZF (boo!), and you are comfortable editing bash, you can manually set `SELECTED_GZ` in the install/uninstall scripts using instructions inside those scripts.
+
 ## Samsung Drivers (this repo)
 
 ```sh
