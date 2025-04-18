@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BackupICC</key>
+	<string>1</string>
+	<key>BundleBuildDate</key>
+	<string>2013.06.14</string>
+	<key>BundleBuildNumber</key>
+	<string>1371220926</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Samsung Scanner</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Copyright (C) 2013 Samsung Electronics Co., Ltd.</string>
+	<key>CFBundleIconFile</key>
+	<string>Samsung Scanner.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.samsung.imagecapture.scanner.app</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Samsung Scanner</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.01.12</string>
+	<key>CFBundleSignature</key>
+	<string>icae</string>
+	<key>CFBundleVersion</key>
+	<string>2.01.12</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>InstallName</key>
+	<string>Scanner Driver</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSUIElement</key>
+	<string>1</string>
+	<key>PackageIdBase</key>
+	<string>com.samsung.icdm</string>
+	<key>ProductName</key>
+	<string>ICDM</string>
+	<key>TargetFolder</key>
+	<string>/Library/Image Capture/Devices</string>
+	<key>UninstallFolder</key>
+	<string>/Library/Application Support/Samsung/Uninstaller/Common</string>
+	<key>VendorName</key>
+	<string>Samsung</string>
+</dict>
+</plist>

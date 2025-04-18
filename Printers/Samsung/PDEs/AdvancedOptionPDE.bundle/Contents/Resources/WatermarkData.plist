@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CONFIDENTIAL</key>
+	<dict>
+		<key>angleMatrixRow</key>
+		<string>2</string>
+		<key>firstPageOnly</key>
+		<string>0</string>
+		<key>fontColor</key>
+		<string>0</string>
+		<key>fontDarkness</key>
+		<string>2</string>
+		<key>fontFullName</key>
+		<string>ArialMT</string>
+		<key>fontName</key>
+		<string>Arial</string>
+		<key>fontSize</key>
+		<string>115</string>
+		<key>fontStyle</key>
+		<string>0</string>
+		<key>messageAngle</key>
+		<string>54</string>
+		<key>string</key>
+		<string>CONFIDENTIAL</string>
+	</dict>
+	<key>DRAFT</key>
+	<dict>
+		<key>angleMatrixRow</key>
+		<string>2</string>
+		<key>firstPageOnly</key>
+		<string>0</string>
+		<key>fontColor</key>
+		<string>0</string>
+		<key>fontDarkness</key>
+		<string>2</string>
+		<key>fontFullName</key>
+		<string>ArialMT</string>
+		<key>fontName</key>
+		<string>Arial</string>
+		<key>fontSize</key>
+		<string>190</string>
+		<key>fontStyle</key>
+		<string>0</string>
+		<key>messageAngle</key>
+		<string>45</string>
+		<key>string</key>
+		<string>DRAFT</string>
+	</dict>
+	<key>TOP SECRET</key>
+	<dict>
+		<key>angleMatrixRow</key>
+		<string>2</string>
+		<key>firstPageOnly</key>
+		<string>0</string>
+		<key>fontColor</key>
+		<string>0</string>
+		<key>fontDarkness</key>
+		<string>2</string>
+		<key>fontFullName</key>
+		<string>ArialMT</string>
+		<key>fontName</key>
+		<string>Arial</string>
+		<key>fontSize</key>
+		<string>130</string>
+		<key>fontStyle</key>
+		<string>0</string>
+		<key>messageAngle</key>
+		<string>52</string>
+		<key>string</key>
+		<string>TOP SECRET</string>
+	</dict>
+</dict>
+</plist>
