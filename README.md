@@ -39,3 +39,21 @@ git clone http://github.com/cskeeters/samsung_print_drivers
 cd samsung_print_drivers
 sudo ./install
 ```
+
+# Configuring
+
+It appears to be easiest to configure the printer via the CUPS web interface.
+
+If you don't know, macOS uses the *Common UNIX Printing System* (CUPS) to print documents.  It has a web interface that allows for the management and configuration of printers.
+
+The web interface of CUPS is disabled by default, so to use it, we need to enable it first.
+
+```sh
+cupsctl WebInterface=yes
+```
+
+Then we can use a web browser to access the web interface on our local machine.
+
+<http://127.0.0.1:631/printers>
+
+You can add printers here, see the queue, but more importantly set parameters like defaulting to *High Quality* prints or a higher quality DPI that your printer may support.
