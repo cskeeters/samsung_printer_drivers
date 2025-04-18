@@ -1,0 +1,64 @@
+#!/bin/bash
+
+output_models() {
+    #-r  raw input - disables interpretion of backslash escapes and line-continuation in the read data
+    #-d  <DELIM>   - recognize <DELIM> as data-end, rather than <newline>
+    while IFS= read -r -d $'\0' GZ; do
+        NAME=$(gzcat "$GZ" | grep -i "^*ModelName" | sed -re 's/.*"(.*)".*/\1/')
+        # MODELS[NAME]="$gz"
+        echo "$NAME	$GZ"
+    done < <(find Printers/PPDs/Contents/Resources -type f -name "*.gz" -print0)
+}
+
+install_ppd() {
+    SELECTED_GZ=$1
+    BASENAME=$(basename "$SELECTED_GZ")
+    PPD_TARGET="/Library/Printers/PPDs/Contents/Resources/$BASENAME"
+
+    declare PATHS
+
+    echo "Inspecting $SELECTED_GZ"
+
+    while IFS= read -r -d $'\n' TARGET_PATH; do
+        SP_RE='/Library/(.*)'
+        local SUB_PATH
+        if [[ "$TARGET_PATH" =~ $SP_RE ]]; then
+            SUB_PATH=${BASH_REMATCH[1]}
+            if [[ -e "$SUB_PATH" ]]; then
+                if [[ -f "$SUB_PATH" ]]; then
+                    DIR=$(dirname "$TARGET_PATH")
+                    if [[ ! -e "$DIR" ]]; then
+                        /usr/bin/install -dv -o root -g admin -m 755 "$DIR"
+                    fi
+
+                    # If the file in the repository is executable, then make it that way when installed
+                    MODE=644
+                    if [[ -x "$SUB_PATH" ]]; then
+                        MODE=755
+                    fi
+                    # echo "Installing $SUB_PATH to $TARGET_PATH"
+                    /usr/bin/install -v -o root -g admin -m $MODE "$SUB_PATH" "$TARGET_PATH"
+                fi
+            else
+                echo "Apple did not include $SUB_PATH in their print drivers, even though the PPD calls for it."
+            fi
+        else 
+            echo "Error finding subpath for $TARGET_PATH"
+        fi
+
+    done < <(gzcat "$SELECTED_GZ" | grep "/Library" | sed -nre 's/.*".*(\/Library.*)".*/\1/p')
+
+    # echo "Installing $SELECTED_GZ to /Library/Printers/PPDs/Contents/Resources/"
+    /usr/bin/install -v -o root -g admin -m 644 "$SELECTED_GZ" "/Library/Printers/PPDs/Contents/Resources/$BASENAME"
+}
+
+# If you want to manually set SELECTED_GZ, you can run something like the
+# following find command to find the right gz file for your printer.
+# You'll need to replace ML-2525W with the model of YOUR printer.
+#   find . -type f -name \*.gz | grep "ML-2525W"
+SELECTED_GZ="./Printers/PPDs/Contents/Resources/Samsung ML-2525W Series.gz"
+
+# If you don't have FZF, set the variable above and comment out the following line
+SELECTED_GZ=$(output_models | fzf -d '	' --with-nth 1 --accept-nth 2)
+
+install_ppd "$SELECTED_GZ"
