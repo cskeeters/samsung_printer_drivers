@@ -12,7 +12,11 @@ The drivers come from `SamsungPrinterDrivers.pkg`, which is located inside of `S
 
 The drivers inside have been reported to work so people have [figured out how](https://discussions.apple.com/thread/253611411?answerId=256951433022&sortBy=rank#256951433022) (and [confirmed on reddit](https://www.reddit.com/r/printers/comments/16nak1x/old_samsung_printer_on_mac_os_13/)) to use [Pacifist](https://www.charlessoft.com/) to extract the drivers and install them.  The idea is to extract the `.gz` of the PPD for your printer and manually install it.
 
-This process didn't work off the bat for me.  I extracted and installed the `.gz` file, added the printer, but when I went to print something it said something about the software not being installed.  After `gunzip`ing the PPD, I saw that there were `.dynlib` files and other files that also needed to be installed.  Once I installed them, I was able to print.
+This process didn't work off the bat for me.  I extracted and installed the `.gz` file, added the printer, but when I went to print something it didn't and gave the error:
+
+> The software for the printer was installed incorrectly. Please reinstall the software from the manufacturer.
+
+After `gunzip`ing the PPD, I saw that there were `.dynlib` files and other files that also needed to be installed.  Once I installed them, I was able to print.
 
 I then realized that the process could be simplified by providing this repository that includes a bash installation script parse through the appropriate PPD file, extract the requisite files and install them all.
 
